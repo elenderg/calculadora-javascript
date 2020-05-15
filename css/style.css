@@ -1,0 +1,29 @@
+body{
+    background-color: #D9E4F1;
+    margin-left: 30px;
+}
+
+.botao{
+    width: 40px;
+    margin-bottom: 4px;
+}
+.botaolargo{
+    width: 84px;;
+}
+.botaoalto{
+    width: 40px;
+    /*height: 30px;*/
+}
+.resultado{
+    font-family: Consolas;
+    width: 215px;
+    text-align: right;
+    border-color: #8e9cad;
+    border-width: 1px;
+    background-color: antiquewhite;
+}
+form{
+    padding:5px;
+    width: 220px;
+    border: 1px solid black;
+}
