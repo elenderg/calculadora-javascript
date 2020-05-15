@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form action="none">
+        <p id="resultado" class="resultado">0</p>
+        <button type="button" class="botao" onclick="LimparMemoria()">MC</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Exibir()">MR</button type="button" class="botao">
+        <button type="button" class="botao" onclick="GuardarNaMemoria()">MS</button type="button" class="botao">
+        <button type="button" class="botao" onclick="AdicionarNaMemoria()">M+</button type="button" class="botao">
+        <button type="button" class="botao" onclick="SubtrairDaMemoria()">M-</button type="button" class="botao"><br>
+        <button type="button" class="botao" onclick="Apagar()">←</button type="button" class="botao">
+        <button type="button" class="botao" onclick="LimparEntrada()">CE</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Limpar()">C</button type="button" class="botao">
+        <button type="button" class="botao" onclick="InverterSinal()">±</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Radiciar()">√</button type="button" class="botao"><br>
+        <button type="button" class="botao" onclick="Concatenar(7)">7</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(8)">8</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(9)">9</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Dividir()">/</button type="button" class="botao">
+        <button type="button" class="botao" onclick="DividirPor100()">%</button type="button" class="botao"><br>
+        <button type="button" class="botao" onclick="Concatenar(4)">4</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(5)">5</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(6)">6</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Multiplicar()">*</button type="button" class="botao">
+        <button type="button" class="botao" onclick="InverterValor()">1/χ</button type="button" class="botao"><br>
+        <button type="button" class="botao" onclick="Concatenar(1)">1</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(2)">2</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Concatenar(3)">3</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Subtrair()">-</button type="button" class="botao"><br>
+        <button type="button" class="botaolargo" onclick="Concatenar(0)">0</button type="button" class="botao">
+        <button type="button" class="botao">,</button type="button" class="botao">
+        <button type="button" class="botao" onclick="Somar()">+</button type="button" class="botao">
+        <button type="button" class="botaoalto" onclick="Resultado()">=</button type="button" class="botao">
+
+
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>
