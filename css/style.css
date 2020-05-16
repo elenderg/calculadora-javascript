@@ -1,6 +1,7 @@
 body{
     background-color: #D9E4F1;
     margin-left: 30px;
+    font-size: larger;
 }
 
 .botao{
@@ -21,6 +22,27 @@ body{
     border-color: #8e9cad;
     border-width: 1px;
     background-color: antiquewhite;
+}
+.resultado{
+    font-family: Consolas;
+    width: 215px;
+    text-align: right;
+    border-color: #8e9cad;
+    border-width: 1px;
+    background-color: antiquewhite;
+    padding: 0%;
+    margin: 0%;
+}
+.previa{
+    font-family: Consolas;
+    width: 215px;
+    text-align: right;
+    border-color: #8e9cad;
+    border-width: 1px;
+    background-color: antiquewhite;
+    font-size: small;
+    padding: 0%;
+    margin: 0%;
 }
 form{
     padding:5px;
