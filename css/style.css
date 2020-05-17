@@ -6,11 +6,18 @@ body{
 form{
     background-color: #D9E4F1;
 }
+/*
 .titulo{
     margin:1px;
-    font-size: smaller;
+    font-size: x-small;
     font-family: Arial, Helvetica, sans-serif;
+    display: inline;
 }
+.icone{
+    width: 20px;
+    height: 20px;
+    display: inline;
+}*/
 .botao{
     width: 40px;
     margin-bottom: 4px;
