@@ -1,7 +1,7 @@
 var Memoria = 0;
 var ResultadoCalculado = 0;
-var Valor = 0;
-var operacao ;
+var Valor;
+var operacao = false;
 var previa;
 
 
@@ -14,6 +14,9 @@ function AlteraParagrafo(conteudo) {
     document.getElementById("resultado").innerHTML = arguments[0];
 }
 
+function LimparParagrafo(){
+    document.getElementById("resultado").innerHTML = "";
+}
 function AlteraPrevia(conteudo) {
     console.log("A função AlteraPrevia foi chamada");
     document.getElementById("previa").innerHTML = arguments[0];
@@ -23,18 +26,27 @@ function Concatenar() {
     console.log("A função Concatenar foi chamada");
     //console.log(arguments[0]);
     if (!operacao) {
-        console.log("Operação = false");
-        Valor = Valor.toString() + arguments[0];                
+        console.log("Operação = false. Concatenando...");
+        if (Valor === undefined) {
+            Valor = 0;
+        } 
+        Valor = Valor.toString() + arguments[0];
         console.log(Valor);
         console.log(Number(Valor));
         paragrafo.innerText = Number(Valor);
 
     } else {
-        console.log("Operação = true. Função Ainda não implementada");
-        Valor = Valor.toString() + arguments[0];                
+        if (Valor === undefined) {
+            Valor = 0;
+        }
+        console.log("Operação = true");
+        console.log(Valor);
+        Valor = arguments[0];
+        LimparParagrafo()
         console.log(Valor);
         console.log(Number(Valor));
         paragrafo.innerText = Number(Valor);
+        operacao = false;
     }
     
 }
@@ -56,29 +68,32 @@ function LimparEntrada() {
 }
 
 function InverterSinal() {
-    Valor = Valor * -1;
+    if (Valor === undefined) {
+        Valor = 0;
+    }
+    Valor = Valor * (-1);
     console.log(Valor);
     paragrafo.innerText = Number(Valor);
     console.log("A função Inverter sinal foi chamada")
 }
 
 function Somar() {
-    if (!operacao) {
-        
+    console.log("A função somar foi chamada.")
+    console.log(operacao);
+    if (!operacao) {                
         Valor = Number(paragrafo.innerText);
+        console.log(Valor);
         previa = Valor.toString() + "+";
-        AlteraPrevia(previa)
-        operacao = true;    
-        /*while (cliclou == false) {
-            
-        }*/    
+        AlteraPrevia(previa);
+        operacao = true;
+        
     }
-    else{
+    else{        
         Valor = Number(paragrafo.innerText);
-        paragrafo.innerText = Number(previa+Valor)
-        operacao = false;
-
-
+        console.log(Number(paragrafo.innerText));
+        console.log(Valor);
+        paragrafo.innerText = Number(previa+Valor) // É isso aqui que está gerando o NaN
+        
     }
 }
 function Subtrair() {
