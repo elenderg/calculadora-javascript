@@ -18,8 +18,15 @@ function LimparParagrafo(){
     document.getElementById("resultado").innerHTML = "";
 }
 function AlteraPrevia(conteudo) {
+    console.log(conteudo);
+    if(conteudo === undefined){
+        document.getElementById("previa").innerHTML = "&nbsp;";
+    }
+    else{
     console.log("A função AlteraPrevia foi chamada");
-    document.getElementById("previa").innerHTML = arguments[0];
+    var x = document.getElementById("previa").innerHTML;
+    document.getElementById("previa").innerHTML = x + arguments[0];
+    }
 }
 
 function Concatenar() {
@@ -56,7 +63,7 @@ function Limpar() {
     paragrafo.innerText = Number(0);
     console.clear();
     console.log("A função limpar foi chamada");
-    AlteraPrevia("&nbsp;");
+    AlteraPrevia();
 }
 
 function LimparEntrada() {    
@@ -78,12 +85,13 @@ function InverterSinal() {
 }
 
 function Somar() {
+    // colocar para exibir o resultado se operacao == true
     console.log("A função somar foi chamada.")
     console.log(operacao);
     if (!operacao) {                
         Valor = Number(paragrafo.innerText);
         console.log(Valor);
-        previa = Valor.toString() + "+";
+        previa = Valor.toString() + " + ";
         AlteraPrevia(previa);
         operacao = true;
         
