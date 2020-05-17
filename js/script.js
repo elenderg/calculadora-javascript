@@ -14,18 +14,18 @@ function AlteraParagrafo(conteudo) {
     document.getElementById("resultado").innerHTML = arguments[0];
 }
 
-function LimparParagrafo(){
+function LimparParagrafo() {
     document.getElementById("resultado").innerHTML = "";
 }
 function AlteraPrevia(conteudo) {
     console.log(conteudo);
-    if(conteudo === undefined){
+    if (conteudo === undefined) {
         document.getElementById("previa").innerHTML = "&nbsp;";
     }
-    else{
-    console.log("A função AlteraPrevia foi chamada");
-    var x = document.getElementById("previa").innerHTML;
-    document.getElementById("previa").innerHTML = x + arguments[0];
+    else {
+        console.log("A função AlteraPrevia foi chamada");
+        var x = document.getElementById("previa").innerHTML;
+        document.getElementById("previa").innerHTML = x + arguments[0];
     }
 }
 
@@ -36,7 +36,7 @@ function Concatenar() {
         console.log("Operação = false. Concatenando...");
         if (Valor === undefined) {
             Valor = 0;
-        } 
+        }
         Valor = Valor.toString() + arguments[0];
         console.log(Valor);
         console.log(Number(Valor));
@@ -55,10 +55,10 @@ function Concatenar() {
         paragrafo.innerText = Number(Valor);
         operacao = false;
     }
-    
+
 }
 
-function Limpar() {    
+function Limpar() {
     Valor = Number(0);
     paragrafo.innerText = Number(0);
     console.clear();
@@ -66,12 +66,12 @@ function Limpar() {
     AlteraPrevia();
 }
 
-function LimparEntrada() {    
+function LimparEntrada() {
     Valor = Number(0);
     paragrafo.innerText = Number(0);
     console.clear();
     console.log("A função limpar foi chamada");
-    
+
 }
 
 function InverterSinal() {
@@ -88,20 +88,20 @@ function Somar() {
     // colocar para exibir o resultado se operacao == true
     console.log("A função somar foi chamada.")
     console.log(operacao);
-    if (!operacao) {                
+    if (!operacao) {
         Valor = Number(paragrafo.innerText);
         console.log(Valor);
         previa = Valor.toString() + " + ";
         AlteraPrevia(previa);
         operacao = true;
-        
+
     }
-    else{        
+    else {
         Valor = Number(paragrafo.innerText);
         console.log(Number(paragrafo.innerText));
         console.log(Valor);
-        paragrafo.innerText = Number(previa+Valor) // É isso aqui que está gerando o NaN
-        
+        paragrafo.innerText = Number(previa + Valor) // É isso aqui que está gerando o NaN
+
     }
 }
 function Subtrair() {
@@ -116,3 +116,21 @@ function Dividir() {
 function Resultado(params) {
     operacao = true;
 }
+
+
+document.onkeydown = function ChecaTecla(tecla) {
+    if (event.keyCode == 17) {
+        console.log("A tecla Ctrl foi pressionada");
+    }
+    
+    if (event.keyCode > 47 && event.keyCode < 57) {
+        var x = event.keyCode - 48;
+        Concatenar(x);
+    }
+
+    if (event.keyCode > 95 && event.keyCode < 106) {
+        var x = event.keyCode - 96;
+        Concatenar(x);
+    }
+
+}  
