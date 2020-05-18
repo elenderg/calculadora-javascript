@@ -117,11 +117,48 @@ function Resultado(params) {
     operacao = true;
 }
 
+function ApagarDigito() {
+    
+}
+function Radiciar() {
+    // sqrt(valor);
+}
+function DividirPor100() {
+    // %. valor = valor * 0,01
+}
+function InverterValor() {
+    // valor = 1/valor;
+}
+function LimparMemoria() {
+    // memoria = "";
+}
+function Exibir() {
+    // Exibe no paragafo o valor salvo na memoria
+}
+function SubtrairDaMemoria() {
+    // memoria = memoria - valor;
+}
+function AdicionarNaMemoria() {
+    //memoria = memoria + valor;
+}
+function GuardarNaMemoria() {
+    // memoria = Number(paragrafo)
+}
+function ApagarDigito() {
+    // paragrafo = paragrafo - ultimodigitodigitado
+}
+
 
 document.onkeydown = function ChecaTecla(tecla) {
     // função "anônima" (termo técnico) para verificar qual tecla foi pressionada    
+    if (event.keyCode == 8) {
+        // tecla ←
+        ApagarDigito();
+    }
+    
     if (event.keyCode == 13) {
         // tecla enter
+        Resultado();
     }
 
     if (event.keyCode > 47 && event.keyCode < 57) {
@@ -155,6 +192,7 @@ document.onkeydown = function ChecaTecla(tecla) {
     
     if (event.keyCode == 187) {
         // tecla =§
+        Resultado();
     }
     if (event.keyCode == 189) {
         Subtrair();
