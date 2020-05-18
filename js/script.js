@@ -60,9 +60,9 @@ function Concatenar() {
 
 
 function Somar() {
-    if (operacao) {        
-        var a = paragrafo.innerHTML ;
-        paragrafo.innerHTML = Number(a.toString() + previa.toString());
+    if (operacao) {
+        var a = previa.toString() + paragrafo.innerHTML.toString();        
+        paragrafo.innerHTML = eval(a);        
         operacao = false;
     }
     if (paragrafo.innerText === undefined) {
