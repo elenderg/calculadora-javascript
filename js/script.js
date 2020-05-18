@@ -119,18 +119,49 @@ function Resultado(params) {
 
 
 document.onkeydown = function ChecaTecla(tecla) {
-    if (event.keyCode == 17) {
-        console.log("A tecla Ctrl foi pressionada");
+    // função "anônima" (termo técnico) para verificar qual tecla foi pressionada    
+    if (event.keyCode == 13) {
+        // tecla enter
     }
-    
+
     if (event.keyCode > 47 && event.keyCode < 57) {
+        // se foi pressionada algum número do teclado comum
         var x = event.keyCode - 48;
+        // pega o valor do keycode e subtrai 48 que é o valor do keycode da tecla 0 do teclado comum
         Concatenar(x);
+        //manda o valor para a função concatenar
     }
 
     if (event.keyCode > 95 && event.keyCode < 106) {
+        // se foi pressionada algum número do teclado NUMÉRICO
         var x = event.keyCode - 96;
+        // pega o valor do keycode e subtrai 96 que é o valor do keycode da tecla 0 do teclado NUMÉRICO
         Concatenar(x);
+        //manda o valor para a função concatenar
     }
+
+    if (event.keyCode == 106) {
+        Multiplicar();
+    }
+    if (event.keyCode == 107) {
+        Somar();
+    }
+    if (event.keyCode == 109) {
+        Subtrair();
+    }
+    if (event.keyCode == 111) {
+        Dividir();
+    }
+    
+    if (event.keyCode == 187) {
+        // tecla =§
+    }
+    if (event.keyCode == 189) {
+        Subtrair();
+        // tecla hífen
+    }
+
+        
+
 
 }  
