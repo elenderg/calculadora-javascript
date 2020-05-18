@@ -4,32 +4,30 @@ var Valor;
 var operacao = false;
 var previa;
 
-
-
 var paragrafo = document.getElementById('resultado');
 // innertext
 
 function AlteraParagrafo(conteudo) {
     console.log("A função AlteraParagrafo foi chamada");
-    document.getElementById("resultado").innerHTML = arguments[0];
-}
-
-function LimparParagrafo() {
-    document.getElementById("resultado").innerHTML = "";
-}
-function AlteraPrevia(conteudo) {
-    console.log(conteudo);
-    if (conteudo === undefined) {
-        document.getElementById("previa").innerHTML = "&nbsp;";
+    Valor = Number(paragrafo.innerText);     
+    if (Valor === undefined) {
+        Valor = 0;
     }
-    else {
-        console.log("A função AlteraPrevia foi chamada");
-        var x = document.getElementById("previa").innerHTML;
-        document.getElementById("previa").innerHTML = x + arguments[0];
+    if (operacao) {
+        operacao = false;        
+        paragrafo.innerHTML = arguments[0];    
+    } else {               
+        paragrafo.innerHTML = Number(Valor.toString() + arguments[0]);    
     }
+    
+    
 }
 
 function Concatenar() {
+    
+    AlteraParagrafo(arguments[0]);
+    
+    /*
     console.log("A função Concatenar foi chamada");
     //console.log(arguments[0]);
     if (!operacao) {
@@ -54,10 +52,53 @@ function Concatenar() {
         console.log(Number(Valor));
         paragrafo.innerText = Number(Valor);
         operacao = false;
-    }
+    }*/
 
 }
 
+
+
+function Somar() {
+    operacao = true;
+    
+    
+    /*
+    // colocar para exibir o resultado se operacao == true
+    console.log("A função somar foi chamada.")
+    console.log(operacao);
+    if (!operacao) {
+        Valor = Number(paragrafo.innerText);
+        console.log(Valor);
+        previa = Valor.toString() + " + ";
+        AlteraPrevia(previa);
+        operacao = true;
+
+    }
+    else {
+        Valor = Number(paragrafo.innerText);
+        console.log(Number(paragrafo.innerText));
+        console.log(Valor);
+        paragrafo.innerText = Number(previa + Valor) // É isso aqui que está gerando o NaN
+*/
+    
+}
+
+
+
+function LimparParagrafo() {
+    document.getElementById("resultado").innerHTML = "";
+}
+function AlteraPrevia(conteudo) {
+    console.log(conteudo);
+    if (conteudo === undefined) {
+        document.getElementById("previa").innerHTML = "&nbsp;";
+    }
+    else {
+        console.log("A função AlteraPrevia foi chamada");
+        var x = document.getElementById("previa").innerHTML;
+        document.getElementById("previa").innerHTML = x + arguments[0];
+    }
+}
 function Limpar() {
     Valor = Number(0);
     paragrafo.innerText = Number(0);
@@ -84,26 +125,6 @@ function InverterSinal() {
     console.log("A função Inverter sinal foi chamada")
 }
 
-function Somar() {
-    // colocar para exibir o resultado se operacao == true
-    console.log("A função somar foi chamada.")
-    console.log(operacao);
-    if (!operacao) {
-        Valor = Number(paragrafo.innerText);
-        console.log(Valor);
-        previa = Valor.toString() + " + ";
-        AlteraPrevia(previa);
-        operacao = true;
-
-    }
-    else {
-        Valor = Number(paragrafo.innerText);
-        console.log(Number(paragrafo.innerText));
-        console.log(Valor);
-        paragrafo.innerText = Number(previa + Valor) // É isso aqui que está gerando o NaN
-
-    }
-}
 function Subtrair() {
     operacao = true;
 }
