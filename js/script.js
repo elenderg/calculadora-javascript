@@ -9,15 +9,16 @@ var paragrafo = document.getElementById('resultado');
 
 function AlteraParagrafo(conteudo) {
     console.log("A função AlteraParagrafo foi chamada");
-    Valor = Number(paragrafo.innerText);     
+    Valor = Number(paragrafo.innerText);
     if (Valor === undefined) {
         Valor = 0;
     }
-    if (operacao) {
-        operacao = false;        
-        paragrafo.innerHTML = arguments[0];    
-    } else {               
-        paragrafo.innerHTML = Number(Valor.toString() + arguments[0]);    
+    if (operacao) {        
+        paragrafo.innerHTML = arguments[0];
+               
+    }
+    else {
+        paragrafo.innerHTML = Number(Valor.toString() + arguments[0]);
     }
     
     
@@ -59,9 +60,17 @@ function Concatenar() {
 
 
 function Somar() {
+    if (operacao) {        
+        var a = paragrafo.innerHTML ;
+        paragrafo.innerHTML = Number(a.toString() + previa.toString());
+        operacao = false;
+    }
+    if (paragrafo.innerText === undefined) {
+        console.log("Valor indefinido")
+    }
+    previa = Number(paragrafo.innerText).toString() + " + ";
+    AlteraPrevia(previa);
     operacao = true;
-    
-    
     /*
     // colocar para exibir o resultado se operacao == true
     console.log("A função somar foi chamada.")
@@ -139,13 +148,27 @@ function Resultado(params) {
 }
 
 function ApagarDigito() {
+    // paragrafo = paragrafo - ultimo digito
     
 }
 function Radiciar() {
     // sqrt(valor);
 }
-function DividirPor100() {
-    // %. valor = valor * 0,01
+function Porcentagem() {
+    if (operacao) {
+        // pega o valor anterior
+        //pega o valor atual
+        // multiplica um pelo outro
+        //divide por 100        
+    } else {
+        // caso seja a primeira operação da calculadora
+        // paragrafo = 0
+        // previa = 0
+        // caso não seja
+        // pega o valor atual e multiplica com ele mesmo
+        // depois divide por 100
+    }
+    
 }
 function InverterValor() {
     // valor = 1/valor;
