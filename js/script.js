@@ -1,33 +1,44 @@
 var Memoria = 0;
 var ResultadoCalculado = 0;
 var Valor;
-var operacao = false;
-var previa;
+var operacao = 0;
+var pprevia = document.getElementById('previa');
 
 var paragrafo = document.getElementById('resultado');
+
 // innertext
 
 function AlteraParagrafo(conteudo) {
+
     console.log("A função AlteraParagrafo foi chamada");
     Valor = Number(paragrafo.innerText);
     if (Valor === undefined) {
         Valor = 0;
     }
-    if (operacao) {        
-        paragrafo.innerHTML = arguments[0];
-               
-    }
     else {
-        paragrafo.innerHTML = Number(Valor.toString() + arguments[0]);
+        if (operacao > 0) {
+            console.log("Operação > 0")  ;      
+            paragrafo.innerHTML = arguments[0];
+            operacao = 0;               
+        }
+        else {
+            console.log("Operacao < 0 ");
+            paragrafo.innerHTML = Number(Valor.toString() + arguments[0].toString());
+        }        
     }
-    
     
 }
 
 function Concatenar() {
-    
+
+    if (operacao > 0) {
+        AlteraParagrafo(arguments[0]);
+        
+    }
+    else{
     AlteraParagrafo(arguments[0]);
-    
+    operacao = 0 ;
+    }
     /*
     console.log("A função Concatenar foi chamada");
     //console.log(arguments[0]);
@@ -60,6 +71,19 @@ function Concatenar() {
 
 
 function Somar() {
+    operacao = operacao + 1;
+    
+    if (operacao < 2) {
+        AlteraPrevia("+");
+    }
+    
+    
+
+   
+
+
+
+    /*
     if (operacao) {
         var a = previa.toString() + paragrafo.innerHTML.toString();        
         paragrafo.innerHTML = eval(a);        
@@ -70,7 +94,7 @@ function Somar() {
     }
     previa = Number(paragrafo.innerText).toString() + " + ";
     AlteraPrevia(previa);
-    operacao = true;
+    operacao = true;*/
     /*
     // colocar para exibir o resultado se operacao == true
     console.log("A função somar foi chamada.")
@@ -104,7 +128,7 @@ function AlteraPrevia(conteudo) {
     }
     else {
         console.log("A função AlteraPrevia foi chamada");
-        var x = document.getElementById("previa").innerHTML;
+        var x = document.getElementById("previa").innerHTML;        
         document.getElementById("previa").innerHTML = x + arguments[0];
     }
 }
@@ -149,6 +173,8 @@ function Resultado(params) {
 
 function ApagarDigito() {
     // paragrafo = paragrafo - ultimo digito
+    //str = str.substring(0, str.length - 1);
+    str = str.slice(0, -1); 
     
 }
 function Radiciar() {
@@ -190,6 +216,10 @@ function GuardarNaMemoria() {
 }
 function ApagarDigito() {
     // paragrafo = paragrafo - ultimodigitodigitado
+    //str = str.substring(0, str.length - 1);
+    let texto = paragrafo.innerText;
+    texto = texto.slice(0, -1); 
+    paragrafo.innerText = texto;
 }
 
 
@@ -201,14 +231,15 @@ document.onkeydown = function ChecaTecla(tecla) {
     }
     
     if (event.keyCode == 13) {
-        // tecla enter
+        // tecla ↩ ↵ ⏎
         Resultado();
     }
 
     if (event.keyCode > 47 && event.keyCode < 57) {
         // se foi pressionada algum número do teclado comum
         var x = event.keyCode - 48;
-        // pega o valor do keycode e subtrai 48 que é o valor do keycode da tecla 0 do teclado comum
+        // pega o valor do keycode e subtrai 48
+        // 48 é o valor do keycode da tecla 0 do teclado comum
         Concatenar(x);
         //manda o valor para a função concatenar
     }
@@ -216,7 +247,8 @@ document.onkeydown = function ChecaTecla(tecla) {
     if (event.keyCode > 95 && event.keyCode < 106) {
         // se foi pressionada algum número do teclado NUMÉRICO
         var x = event.keyCode - 96;
-        // pega o valor do keycode e subtrai 96 que é o valor do keycode da tecla 0 do teclado NUMÉRICO
+        // pega o valor do keycode e subtrai 96
+        // 96 é o valor do keycode da tecla 0 do teclado NUMÉRICO
         Concatenar(x);
         //manda o valor para a função concatenar
     }
