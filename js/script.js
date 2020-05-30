@@ -12,14 +12,13 @@ function AlteraParagrafo(conteudo) {
 
     console.log("A função AlteraParagrafo foi chamada");
     Valor = Number(paragrafo.innerText);
-    if (Valor === undefined) {
+    if (Valor == null) {
         Valor = 0;
     }
     else {
         if (operacao > 0) {
             console.log("Operação > 0")  ;      
-            paragrafo.innerHTML = arguments[0];
-            operacao = 0;               
+            paragrafo.innerHTML = arguments[0];                          
         }
         else {
             console.log("Operacao < 0 ");
@@ -31,20 +30,20 @@ function AlteraParagrafo(conteudo) {
 
 function Concatenar() {
 
-    if (operacao > 0) {
+    if (operacao > 0) {        
         AlteraParagrafo(arguments[0]);
-        
+        operacao = 0 ;
+
     }
     else{
-    AlteraParagrafo(arguments[0]);
-    operacao = 0 ;
+    AlteraParagrafo(arguments[0]);    
     }
     /*
     console.log("A função Concatenar foi chamada");
     //console.log(arguments[0]);
     if (!operacao) {
         console.log("Operação = false. Concatenando...");
-        if (Valor === undefined) {
+        if (Valor == null) {
             Valor = 0;
         }
         Valor = Valor.toString() + arguments[0];
@@ -53,7 +52,7 @@ function Concatenar() {
         paragrafo.innerText = Number(Valor);
 
     } else {
-        if (Valor === undefined) {
+        if (Valor == null) {
             Valor = 0;
         }
         console.log("Operação = true");
@@ -74,7 +73,8 @@ function Somar() {
     operacao = operacao + 1;
     
     if (operacao < 2) {
-        AlteraPrevia("+");
+        conteudo = Valor + '+';
+        AlteraPrevia(conteudo);
     }
     
     
@@ -89,7 +89,7 @@ function Somar() {
         paragrafo.innerHTML = eval(a);        
         operacao = false;
     }
-    if (paragrafo.innerText === undefined) {
+    if (paragrafo.innerText == null) {
         console.log("Valor indefinido")
     }
     previa = Number(paragrafo.innerText).toString() + " + ";
@@ -123,7 +123,7 @@ function LimparParagrafo() {
 }
 function AlteraPrevia(conteudo) {
     console.log(conteudo);
-    if (conteudo === undefined) {
+    if (conteudo == null) {
         document.getElementById("previa").innerHTML = "&nbsp;";
     }
     else {
@@ -149,7 +149,7 @@ function LimparEntrada() {
 }
 
 function InverterSinal() {
-    if (Valor === undefined) {
+    if (Valor == null) {
         Valor = 0;
     }
     Valor = Valor * (-1);
@@ -174,7 +174,7 @@ function Resultado(params) {
 function ApagarDigito() {
     // paragrafo = paragrafo - ultimo digito
     //str = str.substring(0, str.length - 1);
-    str = str.slice(0, -1); 
+    //str = str.slice(0, -1); 
     
 }
 function Radiciar() {
