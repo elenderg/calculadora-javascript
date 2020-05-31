@@ -1,20 +1,30 @@
 body{
-    background-image: url(/img/wallpaper.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #3a6ea5;
     margin-left: 30px;
     font-size: larger;
 }
-form{
-    background-color: #D9E4F1;
+
+div{
+    border: 1px solid;
+    border-top-color: white;
+    border-left-color: white;
 }
-/*
+form{
+    border: 2px solid;
+    background-color: #D9E4F1;
+    border-top-color: white;
+    border-left-color: white;
+    padding:5px;
+    width: 220px;
+}
+
 .titulo{
     margin:1px;
     font-size: x-small;
     font-family: Arial, Helvetica, sans-serif;
     display: inline;
-}
+    background-color: #d4d0c8;
+} /*
 .icone{
     width: 20px;
     height: 20px;
@@ -23,12 +33,15 @@ form{
 .botao{
     width: 40px;
     margin-bottom: 4px;
+    background-color: #d4d0c8;
 }
 .botaolargo{
-    width: 84px;;
+    width: 84px;
+    background-color: #d4d0c8;
 }
 .botaoalto{
     width: 40px;
+    background-color: #d4d0c8;
     /*height: 30px;*/
 }
 .resultado{
@@ -60,10 +73,6 @@ form{
     padding: 0%;
     margin: 0%;
 }
-form{
-    padding:5px;
-    width: 220px;
-    border: 1px solid black;
-}
+
 
 
