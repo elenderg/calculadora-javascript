@@ -2,7 +2,7 @@ var Memoria = 0;
 var ResultadoCalculado = 0;
 var Valor;
 var operacao = 0;
-var pprevia = document.getElementById('previa');
+var previa = document.getElementById('previa');
 
 var paragrafo = document.getElementById('resultado');
 
@@ -76,8 +76,12 @@ function Somar() {
         conteudo = Valor + '+';
         AlteraPrevia(conteudo);
     }
+    else {
+        previa.innerHTML = previa.slice(0, -1); 
+        previa.innerHTML = previa + " +";
+    }
     
-    
+
 
    
 
