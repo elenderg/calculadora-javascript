@@ -34,7 +34,7 @@ function Concatenar() {
 
     if (operacao > 0) {
         console.log("tem que somar essa parada aqui depois");
-        AlteraParagrafo(arguments[0]);
+        AlteraParagrafo(arguments[0]); // envia o número para a função
         operacao = 0;
 
     } else {
@@ -84,11 +84,16 @@ function Somar() {
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' + ';
         AlteraPrevia(conteudo);
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        paragrafo.innerText = Nubmer(previa.innerText); 
     } else {
         console.log("apertou o botão mais de uma vez");
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
-        previa.innerHTML = x + " + ";
+        previa.innerHTML = x + " + ";       
     }
 
 
@@ -196,9 +201,13 @@ function Dividir() {
     operacao = true;
 }
 
-function Resultado(params) {
-    console.log("esta linha foi chamada");
-    operacao = true;
+function Resultado(tipodeoperacao) {
+    console.log("calculando resultado");
+    operacao = 0;
+    let x = previa.innerText;
+        x = x.slice(0, -1);
+    let resultado = eval(x);
+    return resultado;
 }
 
 function ApagarDigito() {
