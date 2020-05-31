@@ -11,6 +11,7 @@ var paragrafo = document.getElementById('resultado');
 function AlteraParagrafo(conteudo) {
     console.log("A função AlteraParagrafo foi chamada");
     Valor = Number(paragrafo.innerText);
+    console.log(Valor);
     if (Valor == null) {
         console.log("erro. valor do parágrafo estava indefinido");
         Valor = 0;
@@ -86,7 +87,11 @@ function Somar() {
         AlteraPrevia(conteudo);
         console.log("A prévia no momento é")
         console.log(previa.innerText);
-        paragrafo.innerText = Nubmer(previa.innerText); 
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        console.log(x);
+        paragrafo.innerText = eval(x); 
+        // por um slice aqui
     } else {
         console.log("apertou o botão mais de uma vez");
         console.log("A prévia no momento é")
@@ -201,7 +206,7 @@ function Dividir() {
     operacao = true;
 }
 
-function Resultado(tipodeoperacao) {
+function Resultado() {
     console.log("calculando resultado");
     operacao = 0;
     let x = previa.innerText;
