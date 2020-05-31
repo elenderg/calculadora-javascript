@@ -3,7 +3,6 @@ var ResultadoCalculado = 0;
 var Valor;
 var operacao = 0;
 var previa = document.getElementById('previa');
-
 var paragrafo = document.getElementById('resultado');
 
 // innertext
@@ -27,52 +26,18 @@ function AlteraParagrafo(conteudo) {
             paragrafo.innerHTML = Number(Valor.toString() + arguments[0].toString());
         }
     }
-
 }
 
 function Concatenar() {
     console.log("A função Concatenar foi chamada");
-
     if (operacao > 0) {
         console.log("tem que somar essa parada aqui depois");
         AlteraParagrafo(arguments[0]); // envia o número para a função
         operacao = 0;
-
     } else {
         console.log("operacão = 0");
         AlteraParagrafo(arguments[0]);
     }
-    /*
-    console.log("A função Concatenar foi chamada");
-    //console.log(arguments[0]);
-    if (!operacao) { 
- 	 console.log("esta linha foi chamada");
-        console.log("Operação = false. Concatenando...");
-        if (Valor == null) { 
- 	 console.log("esta linha foi chamada");
-            Valor = 0;
-        }
-        Valor = Valor.toString() + arguments[0];
-        console.log(Valor);
-        console.log(Number(Valor));
-        paragrafo.innerText = Number(Valor);
-
-    } else { 
- 	 console.log("esta linha foi chamada");
-        if (Valor == null) { 
- 	 console.log("esta linha foi chamada");
-            Valor = 0;
-        }
-        console.log("Operação = true");
-        console.log(Valor);
-        Valor = arguments[0];
-        LimparParagrafo()
-        console.log(Valor);
-        console.log(Number(Valor));
-        paragrafo.innerText = Number(Valor);
-        operacao = false;
-    }*/
-
 }
 
 
@@ -136,7 +101,6 @@ function LimparEntrada() {
     paragrafo.innerText = Number(0);
     console.clear();
     console.log("A função limpar foi chamada");
-
 }
 
 function InverterSinal() {
@@ -151,8 +115,7 @@ function InverterSinal() {
     Valor = Valor * (-1);
     console.log(Valor);
     paragrafo.innerText = Number(Valor);
-    }
-    
+    }    
 }
 
 function Subtrair() {
@@ -243,7 +206,6 @@ function ApagarDigito() {
     //str = str.substring(0, str.length - 1);
     //str = str.slice(0, -1); 
     paragrafo.innerText = paragrafo.slice(0, -1);
-
 }
 
 function Radiciar() {
@@ -268,7 +230,6 @@ function Porcentagem() {
         // pega o valor atual e multiplica com ele mesmo
         // depois divide por 100
     }
-
 }
 
 function InverterValor() {
@@ -373,8 +334,4 @@ document.onkeydown = function ChecaTecla(tecla) {
         Subtrair();
         // tecla hífen
     }
-
-
-
-
 }
