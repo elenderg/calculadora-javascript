@@ -192,17 +192,17 @@ function InverterSinal() {
 }
 
 function Subtrair() {
-    console.log("esta linha foi chamada");
+    console.log("calculando subtração");
     operacao = true;
 }
 
 function Multiplicar() {
-    console.log("esta linha foi chamada");
+    console.log("calculando multiplicação");
     operacao = true;
 }
 
 function Dividir() {
-    console.log("esta linha foi chamada");
+    console.log("calculando divisão");
     operacao = true;
 }
 
@@ -217,15 +217,16 @@ function Resultado() {
 }
 
 function ApagarDigito() {
-    console.log("esta linha foi chamada");
+    console.log("apagando dígito");
     // paragrafo = paragrafo - ultimo digito
     //str = str.substring(0, str.length - 1);
     //str = str.slice(0, -1); 
+    paragrafo.innerText = paragrafo.slice(0, -1);
 
 }
 
 function Radiciar() {
-    console.log("esta linha foi chamada");
+    console.log("radiciando");
     // sqrt(valor);
 }
 
@@ -250,37 +251,37 @@ function Porcentagem() {
 }
 
 function InverterValor() {
-    console.log("esta linha foi chamada");
+    console.log("invertendo valor");
     // valor = 1/valor;
 }
 
 function LimparMemoria() {
-    console.log("esta linha foi chamada");
+    console.log("limpando memória");
     // memoria = "";
 }
 
 function Exibir() {
-    console.log("esta linha foi chamada");
+    console.log("Exibindo valor salvo na memória");
     // Exibe no paragafo o valor salvo na memoria
 }
 
 function SubtrairDaMemoria() {
-    console.log("esta linha foi chamada");
+    console.log("Subtraindo valor da memória");
     // memoria = memoria - valor;
 }
 
 function AdicionarNaMemoria() {
-    console.log("esta linha foi chamada");
+    console.log("Adicionando valor à memória");
     //memoria = memoria + valor;
 }
 
 function GuardarNaMemoria() {
-    console.log("esta linha foi chamada");
+    console.log("guardando valor na memória");
     // memoria = Number(paragrafo)
 }
 
 function ApagarDigito() {
-    console.log("esta linha foi chamada");
+    console.log("Apagando dígito");
     // paragrafo = paragrafo - ultimodigitodigitado
     //str = str.substring(0, str.length - 1);
     let texto = paragrafo.innerText;
@@ -290,22 +291,22 @@ function ApagarDigito() {
 
 
 document.onkeydown = function ChecaTecla(tecla) {
-    console.log("esta linha foi chamada");
+    console.log("verificando tecla");
     // função "anônima" (termo técnico) para verificar qual tecla foi pressionada    
     if (event.keyCode == 8) {
-        console.log("esta linha foi chamada");
+        console.log("a tecla ← foi pressionada");
         // tecla ←
         ApagarDigito();
     }
 
     if (event.keyCode == 13) {
-        console.log("esta linha foi chamada");
+        console.log("a tecla ↩ ↵ ⏎ foi pressionada");
         // tecla ↩ ↵ ⏎
         Resultado();
     }
 
     if (event.keyCode > 47 && event.keyCode < 57) {
-        console.log("esta linha foi chamada");
+        console.log("a tecla faz parte do teclado !@#$%");
         // se foi pressionada algum número do teclado comum
         var x = event.keyCode - 48;
         // pega o valor do keycode e subtrai 48
@@ -315,7 +316,7 @@ document.onkeydown = function ChecaTecla(tecla) {
     }
 
     if (event.keyCode > 95 && event.keyCode < 106) {
-        console.log("esta linha foi chamada");
+        console.log("a tecla faz parte do teclado numérico");
         // se foi pressionada algum número do teclado NUMÉRICO
         var x = event.keyCode - 96;
         // pega o valor do keycode e subtrai 96
@@ -325,29 +326,29 @@ document.onkeydown = function ChecaTecla(tecla) {
     }
 
     if (event.keyCode == 106) {
-        console.log("esta linha foi chamada");
+        console.log("tecla * presssionada");
         Multiplicar();
     }
     if (event.keyCode == 107) {
-        console.log("esta linha foi chamada");
+        console.log("tecla + pressionada");
         Somar();
     }
     if (event.keyCode == 109) {
-        console.log("esta linha foi chamada");
+        console.log('tecla "-" pressionada');
         Subtrair();
     }
     if (event.keyCode == 111) {
-        console.log("esta linha foi chamada");
+        console.log("tecla ÷ pressionada");
         Dividir();
     }
 
     if (event.keyCode == 187) {
-        console.log("esta linha foi chamada");
+        console.log("a tecla = foi pressionada");
         // tecla =§
         Resultado();
     }
     if (event.keyCode == 189) {
-        console.log("esta linha foi chamada");
+        console.log('tecla "-" pressionada');
         Subtrair();
         // tecla hífen
     }
