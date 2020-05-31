@@ -80,7 +80,6 @@ function Concatenar() {
 function Somar() {
     console.log("função soma chamada");
     operacao = operacao + 1;
-
     if (operacao < 2) {
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' + ';
@@ -100,45 +99,6 @@ function Somar() {
         x = x.slice(0, -1);
         previa.innerHTML = x + " + ";       
     }
-
-
-
-
-    /*
-    if (operacao) { 
- 	 console.log("esta linha foi chamada");
-        var a = previa.toString() + paragrafo.innerHTML.toString();        
-        paragrafo.innerHTML = eval(a);        
-        operacao = false;
-    }
-    if (paragrafo.innerText == null) { 
- 	 console.log("esta linha foi chamada");
-        console.log("Valor indefinido")
-    }
-    previa = Number(paragrafo.innerText).toString() + " + ";
-    AlteraPrevia(previa);
-    operacao = true;*/
-    /*
-    // colocar para exibir o resultado se operacao == true
-    console.log("A função somar foi chamada.")
-    console.log(operacao);
-    if (!operacao) { 
- 	 console.log("esta linha foi chamada");
-        Valor = Number(paragrafo.innerText);
-        console.log(Valor);
-        previa = Valor.toString() + " + ";
-        AlteraPrevia(previa);
-        operacao = true;
-
-    }
-    else { 
- 	 console.log("esta linha foi chamada");
-        Valor = Number(paragrafo.innerText);
-        console.log(Number(paragrafo.innerText));
-        console.log(Valor);
-        paragrafo.innerText = Number(previa + Valor) // É isso aqui que está gerando o NaN
-*/
-
 }
 
 
@@ -180,15 +140,19 @@ function LimparEntrada() {
 }
 
 function InverterSinal() {
-    console.log("esta linha foi chamada");
+    console.log("A função Inverter sinal foi chamada")
+    Valor = Number(paragrafo.innerText);
+    console.log(Valor);
     if (Valor == null) {
-        console.log("esta linha foi chamada");
+        console.log("Valor = undefined");
         Valor = 0;
     }
+    else {
     Valor = Valor * (-1);
     console.log(Valor);
     paragrafo.innerText = Number(Valor);
-    console.log("A função Inverter sinal foi chamada")
+    }
+    
 }
 
 function Subtrair() {
