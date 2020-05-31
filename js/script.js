@@ -157,17 +157,74 @@ function InverterSinal() {
 
 function Subtrair() {
     console.log("calculando subtração");
-    operacao = true;
+    operacao = operacao + 1;
+    if (operacao < 2) {
+        console.log("sem repetição");
+        conteudo = paragrafo.innerHTML + ' - ';
+        AlteraPrevia(conteudo);
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        console.log(x);
+        paragrafo.innerText = eval(x); 
+        // por um slice aqui
+    } else {
+        console.log("apertou o botão mais de uma vez");
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        previa.innerHTML = x + " - ";       
+    }
 }
 
 function Multiplicar() {
-    console.log("calculando multiplicação");
-    operacao = true;
+    console.log("calculando multiplicação");    
+    operacao = operacao + 1;
+    if (operacao < 2) {
+        console.log("sem repetição");
+        conteudo = paragrafo.innerHTML + ' * ';
+        AlteraPrevia(conteudo);
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        console.log(x);
+        paragrafo.innerText = eval(x); 
+        // por um slice aqui
+    } else {
+        console.log("apertou o botão mais de uma vez");
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        previa.innerHTML = x + " * ";       
+    }
 }
 
 function Dividir() {
     console.log("calculando divisão");
-    operacao = true;
+    operacao = operacao + 1;
+    if (operacao < 2) {
+        console.log("sem repetição");
+        conteudo = paragrafo.innerHTML + ' / ';
+        AlteraPrevia(conteudo);
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        console.log(x);
+        paragrafo.innerText = eval(x); 
+        // por um slice aqui
+    } else {
+        console.log("apertou o botão mais de uma vez");
+        console.log("A prévia no momento é")
+        console.log(previa.innerText);
+        let x = previa.innerText;
+        x = x.slice(0, -1);
+        previa.innerHTML = x + " / ";       
+    }
 }
 
 function Resultado() {
