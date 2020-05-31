@@ -209,10 +209,11 @@ function Dividir() {
 function Resultado() {
     console.log("calculando resultado");
     operacao = 0;
-    let x = previa.innerText;
-        x = x.slice(0, -1);
-    let resultado = eval(x);
-    return resultado;
+    let x = eval(previa.innerText + resultado.innerText);
+    /*x = x.slice(0, -1);
+    let res = eval(x);*/
+    previa.innerHTML = "&nbsp;";
+    resultado.innerText = x;
 }
 
 function ApagarDigito() {
