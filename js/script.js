@@ -260,6 +260,7 @@ function AdicionarNaMemoria() {
 function GuardarNaMemoria() {
     console.log("guardando valor na memória");
     // memoria = Number(paragrafo)
+    
 }
 
 function ApagarDigito() {
