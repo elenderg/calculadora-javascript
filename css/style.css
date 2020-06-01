@@ -31,36 +31,42 @@ form{
     background-color: #d4d0c8;
 } 
 .botao{
-    /*
+    border: 1px solid;    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     background-color: #d4d0c8;
     border-top-color: white;
     border-left-color: white;
     border-right-color: #404040;
-    border-bottom-color: #404040;*/
+    border-bottom-color: #404040;
     font-size: 13px;
     width: 35px;
     height: 28px;
     margin-bottom: 4px;
     
 }
-.botaolargo{
-    /*
+.botaolargo{    
     border: 1px solid;
     border-top-color: white;
     border-left-color: white;
     border-right-color: #404040;
-    border-bottom-color: #404040;*/
+    border-bottom-color: #404040;
     width: 75px;
     height: 28px;
-    /*background-color: #d4d0c8 !important;*/
+    background-color: #d4d0c8 ;
 }
-.botaoalto{    
+.botaoalto{   
+    border: 1px solid;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: #404040;
+    border-bottom-color: #404040; 
+    background-color: #d4d0c8 ;
     width: 35px;
     height: 28px;   
 } 
-.resultado{
+.resultado{ 
+
     font-family: Consolas;
     width: 215px;
     text-align: right;
