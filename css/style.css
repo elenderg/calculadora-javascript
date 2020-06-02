@@ -1,5 +1,8 @@
 
-
+button:focus {
+    outline: 0;
+    /*box-shadow: none;*/
+  }
 body{
     background-color: #3a6ea5;
     margin-left: 30px;
@@ -95,7 +98,9 @@ form{
     padding: 0%;
     margin: 0%;
 }
-.button:active{
+
+
+button:active{
     border: 1px solid;
     border-right-color: white;
     border-bottom-color: white;
@@ -104,3 +109,15 @@ form{
 } 
 
 
+/*
+*:focus {
+  outline: none !important
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+:active {
+  outline: none !important;
+}*/
