@@ -336,3 +336,7 @@ document.onkeydown = function ChecaTecla(tecla) {
         // tecla hífen
     }
 }
+
+function negate(params) {
+    return params * -1;
+}
