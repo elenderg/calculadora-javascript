@@ -49,7 +49,7 @@ function Somar() {
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' + ';
         AlteraPrevia(conteudo);
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
@@ -58,7 +58,7 @@ function Somar() {
         // por um slice aqui
     } else {
         console.log("apertou o botão mais de uma vez");
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
@@ -104,7 +104,7 @@ function LimparEntrada() {
 }
 
 function InverterSinal() {
-    console.log("A função Inverter sinal foi chamada")
+    console.log("A função Inverter sinal foi chamada");
     Valor = Number(paragrafo.innerText);
     console.log(Valor);
     if (Valor == null) {
@@ -125,7 +125,7 @@ function Subtrair() {
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' - ';
         AlteraPrevia(conteudo);
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
@@ -149,7 +149,7 @@ function Multiplicar() {
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' * ';
         AlteraPrevia(conteudo);
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
@@ -158,7 +158,7 @@ function Multiplicar() {
         // por um slice aqui
     } else {
         console.log("apertou o botão mais de uma vez");
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
@@ -182,7 +182,7 @@ function Dividir() {
         // por um slice aqui
     } else {
         console.log("apertou o botão mais de uma vez");
-        console.log("A prévia no momento é")
+        console.log("A prévia no momento é");
         console.log(previa.innerText);
         let x = previa.innerText;
         x = x.slice(0, -1);
