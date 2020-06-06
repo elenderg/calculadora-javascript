@@ -275,8 +275,14 @@ function ApagarDigito() {
     // paragrafo = paragrafo - ultimodigitodigitado
     //str = str.substring(0, str.length - 1);
     let texto = paragrafo.innerText;
-    texto = texto.slice(0, -1);
-    paragrafo.innerText = texto;
+    if (texto.length > 1) {
+        texto = texto.slice(0, -1);
+        paragrafo.innerText = texto;    
+    }
+    else {
+        paragrafo.innerText = "0";
+    }
+
 }
 
 document.addEventListener('click', 
