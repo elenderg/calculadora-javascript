@@ -1,6 +1,6 @@
 
 button:focus {
-    /*outline: 0;*/
+    outline: 0;
     /*box-shadow: none;*/
   }
 body{
@@ -9,10 +9,10 @@ body{
     font-size: larger;
 }
 
-div{
-    border: 1px solid;
-    border-top-color: white;
-    border-left-color: white;
+div{    
+    margin: auto;
+    width: 80%;    
+    padding: 70px 0;
 }
 form{
     border: 1px solid;
