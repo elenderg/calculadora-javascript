@@ -1,3 +1,3 @@
 # calculadora-javascript
 Uma calculadora com funções semelhantes à encontradas no Windows 7.
-Status: Ainda em Desenvolvimento.
+Status: Ainda em Desenvolvimento. :trollface:
