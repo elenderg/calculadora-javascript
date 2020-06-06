@@ -185,6 +185,10 @@ function Dividir() {
         let x = previa.innerText;
         x = x.slice(0, -1);
         console.log(x);
+        if ( !isFinite( eval(x)  )  ) {
+            AlertarErro();
+            paragrafo.innerText = "Impossível dividir por zero";
+        }            
         paragrafo.innerText = eval(x); 
         // por um slice aqui
     } else {
@@ -197,14 +201,22 @@ function Dividir() {
     }
 }
 
+
+
 function Resultado() {
     console.log("calculando resultado");
     operacao = 0;
     let x = eval(previa.innerText + resultado.innerText);
+    if (!isFinite(x)) {
+        AlertarErro();
+        paragrafo.innerHTML = "<p class='previa'>Impossível dividir por zero</p>";
+    }    
     /*x = x.slice(0, -1);
     let res = eval(x);*/
+    else{
     previa.innerHTML = "&nbsp;";
     resultado.innerText = x;
+    }
 }
 
 function ApagarDigito() {
@@ -274,6 +286,10 @@ function ApagarDigito() {
     console.log("Apagando dígito");
     // paragrafo = paragrafo - ultimodigitodigitado
     //str = str.substring(0, str.length - 1);
+    if (operacao > 0) {
+        AlertarErro();
+    }
+
     let texto = paragrafo.innerText;
     if (texto.length > 1) {
         texto = texto.slice(0, -1);
@@ -283,6 +299,11 @@ function ApagarDigito() {
         paragrafo.innerText = "0";
     }
 
+}
+
+function AlertarErro(){
+    var audio = new Audio('audio/erro.wav');
+    audio.play();
 }
 
 document.addEventListener('click', 
