@@ -10,20 +10,26 @@ var paragrafo = document.getElementById('resultado');
 function AlteraParagrafo(conteudo) {
     console.log("A função AlteraParagrafo foi chamada");
     Valor = Number(paragrafo.innerText);
+    // Aqui a variável Valor recebe o conteúdo digitado.
     console.log(Valor);
     if (Valor == null) {
         console.log("erro. valor do parágrafo estava indefinido");
         Valor = 0;
+        // Se caso o valor seja nulo, a variável recebe o valor 0
     } else {
         console.log("verificando conteúdo do parágrafo");
         if (operacao > 0) {
-            console.log("já havia sido chamado uma operação anteriormente");
+            console.log("operação aritmética está em andamento");
             console.log("Operação > 0");
             paragrafo.innerHTML = arguments[0];
+            // Já que uma operação está em execução, 
+            // a calculadora irá limpar o conteúdo do parágrafo, 
+            //colocando o novo valor digitado no lugar
         } else {
             console.log("tudo ok");
             console.log("Operacao = 0 ");
             paragrafo.innerHTML = Number(Valor.toString() + arguments[0].toString());
+            // a linha acima serve para concatenar os dígitos
         }
     }
 }
@@ -31,7 +37,7 @@ function AlteraParagrafo(conteudo) {
 function Concatenar() {
     console.log("A função Concatenar foi chamada");
     if (operacao > 0) {
-        console.log("tem que somar essa parada aqui depois");
+        console.log("Atenção: verificar qual operaração está em andamento. Recurso ainda não Implementado");
         AlteraParagrafo(arguments[0]); // envia o número para a função
         operacao = 0;
     } else {
@@ -46,6 +52,7 @@ function Somar() {
     console.log("função soma chamada");
     operacao = operacao + 1;
     if (operacao < 2) {
+        //caso o usuário tenha apertado mais de uma vez qualquer botão de operação
         console.log("sem repetição");
         conteudo = paragrafo.innerHTML + ' + ';
         AlteraPrevia(conteudo);
@@ -239,7 +246,7 @@ function InverterValor() {
 
 function LimparMemoria() {
     console.log("limpando memória");
-    // memoria = "";
+    Memoria = 0;
 }
 
 function Exibir() {
@@ -272,9 +279,20 @@ function ApagarDigito() {
     paragrafo.innerText = texto;
 }
 
+document.addEventListener('click', 
+/* chama a função abaixo cada vez que um botão é clicado */
+ function(e) {
+      if(document.activeElement.toString() == '[object HTMLButtonElement]')
+      /* caso algum elemento ativo seja um botão*/
+      {document.activeElement.blur(); }
+      /* tira o foco do botão*/
+             }           );
 
 document.onkeydown = function ChecaTecla(tecla) {
-    console.log("verificando tecla");
+    console.log("verificando tecla");/*
+    document.getElementById("myAnchor").blur();
+    var list = document.getElementsByTagName("button")[0];
+    list.getElementsByTagName("button").blur();*/
     // função "anônima" (termo técnico) para verificar qual tecla foi pressionada    
     if (event.keyCode == 8) {
         console.log("a tecla ← foi pressionada");
