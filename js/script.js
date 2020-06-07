@@ -215,9 +215,10 @@ function Resultado() {
 
 
 
-function Radiciar() {
+function Radiciar(numero) {
     console.log("radiciando");
     // sqrt(valor);
+    return Math.sqrt(numero);
 }
 
 function Porcentagem() {
@@ -239,9 +240,10 @@ function Porcentagem() {
     }
 }
 
-function InverterValor() {
+function InverterValor(numero) {
     console.log("invertendo valor");
     // valor = 1/valor;
+    return 1 / numero;
 }
 
 function LimparMemoria() {
@@ -252,22 +254,25 @@ function LimparMemoria() {
 function Exibir() {
     console.log("Exibindo valor salvo na memória");
     // Exibe no paragafo o valor salvo na memoria
+    paragrafo.innerText = Memoria;
 }
 
-function SubtrairDaMemoria() {
+function SubtrairDaMemoria(numero) {
     console.log("Subtraindo valor da memória");
     // memoria = memoria - valor;
+    Memoria = Memoria - numero;
 }
 
-function AdicionarNaMemoria() {
+function AdicionarNaMemoria(numero) {
     console.log("Adicionando valor à memória");
     //memoria = memoria + valor;
+    Memoria = Memoria + numero;
 }
 
-function GuardarNaMemoria() {
+function GuardarNaMemoria(numero) {
     console.log("guardando valor na memória");
     // memoria = Number(paragrafo)
-    
+    Memoria = numero;
 }
 
 
