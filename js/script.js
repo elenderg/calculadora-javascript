@@ -46,8 +46,6 @@ function Concatenar() {
     }
 }
 
-
-
 function Somar() {
     console.log("função soma chamada");
     operacao = operacao + 1;
@@ -72,8 +70,6 @@ function Somar() {
         previa.innerHTML = x + " + ";       
     }
 }
-
-
 
 function LimparParagrafo() {
     console.log("esta linha foi chamada");
@@ -201,8 +197,6 @@ function Dividir() {
     }
 }
 
-
-
 function Resultado() {
     console.log("calculando resultado");
     operacao = 0;
@@ -219,13 +213,7 @@ function Resultado() {
     }
 }
 
-function ApagarDigito() {
-    console.log("apagando dígito");
-    // paragrafo = paragrafo - ultimo digito
-    //str = str.substring(0, str.length - 1);
-    //str = str.slice(0, -1); 
-    paragrafo.innerText = paragrafo.slice(0, -1);
-}
+
 
 function Radiciar() {
     console.log("radiciando");
@@ -281,6 +269,7 @@ function GuardarNaMemoria() {
     // memoria = Number(paragrafo)
     
 }
+
 
 function ApagarDigito() {
     console.log("Apagando dígito");
