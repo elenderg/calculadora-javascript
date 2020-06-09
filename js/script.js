@@ -359,7 +359,7 @@ document.onkeydown = function ChecaTecla(tecla) {
         console.log('tecla "-" pressionada');
         Subtrair();
     }
-    if (event.keyCode == 111) {
+    if (event.keyCode == 111 ||	event.keyCode == 193) {
         console.log("tecla ÷ pressionada");
         Dividir();
     }
