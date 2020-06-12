@@ -240,10 +240,14 @@ function Porcentagem() {
     }
 }
 
+function negate(numero) {
+    return numero * -1;
+}
+
 function InverterValor(numero) {
     console.log("invertendo valor");
     // valor = 1/valor;
-    return 1 / numero;
+    return 1 / numero;    
 }
 
 function LimparMemoria() {
@@ -376,6 +380,3 @@ document.onkeydown = function ChecaTecla(tecla) {
     }
 }
 
-function negate(params) {
-    return params * -1;
-}
